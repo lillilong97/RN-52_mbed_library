@@ -1,6 +1,6 @@
 #include "mbed.h"
 //ascii commands
-char play_s[] = "AP\r\n";
+char play_pause_s[] = "AP\r\n";
 char vol_up_s[] = "AV+\r\n";
 char vol_dn_s[] = "AV-\r\n";
 char next_s[] = "AT+\r\n";
@@ -14,9 +14,8 @@ class RN52 {
         void init();
         void setPWREN(int val);
         void setSerial(PinName TX, PinName RX);
-        void send_buff();
-        void play();
-        void pause();
+        void send_buff(char* buff);
+        void play_pause();
         void vol_up();
         void vol_down();
         void next();
@@ -27,30 +26,28 @@ class RN52 {
         RN52();
         RN52(PinName TX, PinName RX, PinName PWREN_pin);
     private:
-        DigitalOut PWREN(PinName PWREN_pin);
-        Serial rn52_serial(PinName TX, PinName RX);
+        DigitalOut PWREN;
+        Serial rn52_serial;
 
 };
 
+
+
 // DEFAULT CONSTRUCTOR
-RN52::RN52() {
+RN52::RN52() : PWREN(p11), rn52_serial(p9, p10) { 
     //default serial pins are TX p9 RX p10
     //default PWREN is p11
-    Serial rn52_serial(p9,p10);
-    DigitalOut PWREN(p11);
-}
+    }
 
 // CONSTRUCTOR
-RN52::RN52(PinName TX, PinName RX, PinName PWREN_pin) {
-    Serial rn52_serial(TX,RX);
-    DigitalOut PWREN(PWREN_pin);
-
+RN52::RN52(PinName PWREN_pin, PinName TX, PinName RX) : PWREN(PWREN_pin), rn52_serial(TX,RX) {
+    
 }
 // SET PWREN VALUE
 // Sets value of PWREN
 // takes values of 0 [OFF] and 1 [ON]
 void RN52::setPWREN(int val) {
-    PWREN = val;
+    this->PWREN.write(val);
 }
 
 // INITIALIZATION FUNCTION
@@ -68,20 +65,17 @@ void RN52::send_buff (char *buff) {
     }
 }
 
-// PLAY FUNCTION
-// Sends "play" ascii command over serial
-void RN52::play() {
-    rn52_serial.send_buff(play_s);
+// PLAY/PAUSE FUNCTION
+// Sends "play/pause" ascii command over serial
+// will toggle play/pause state
+void RN52::play_pause() {
+    this->send_buff(play_pause_s);
 }
 
-// PAUSE FUNCTION
-// Sends "pause" ascii command over serial
-void RN52::pause() {
-    rn52_serial.send_buff(pause_s);
-}
+
 
 // VOLUME UP FUNCTION
 // Sends "vol_up" ascii command over serial
-void RN52::volume_up() {
-    rn52_serial.send_buff(vol_up_s);    
+void RN52::vol_up() {
+    this->send_buff(vol_up_s);    
 }
