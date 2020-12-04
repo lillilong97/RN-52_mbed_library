@@ -107,10 +107,45 @@ This breakout board makes use of the "Command Mode" of the RN-52 module, allowin
 
 <img src="https://i.imgur.com/liXEvN5.png" width="800" title="RN-52 Breakout Board Layout">
 
+## Connector Pin Layout
 
 ![connector pinout](https://i.imgur.com/acJiQiz.png)
 
+## Breakout Board Pinout
 
+### Input (LEFT SIDE)
+
+<table>
+  <tr>
+    <th>Pin #</th>
+    <th>Pin Name</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>3V3</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>GND</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>RESET</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>PWREN</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>UART_RX</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>UART_TX</td>
+  </tr>
+
+</table>
 
 ## Known Issues
 1. Microphone output DOES NOT work. This is due to a misunderstanding of the microphone configuration based on unclear documentation.
