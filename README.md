@@ -73,6 +73,8 @@ the main loop before any other commands are used.
 
 Change value of PWREN. Useful if you need to put the module into hibernation without power cycling. 
 
+**Note:** val should be either 0 or 1.
+
 ### Send Buffer
 
 `send_buff(char* buff)`
@@ -83,6 +85,55 @@ More commands avaiable [here](https://ww1.microchip.com/downloads/en/DeviceDoc/5
 
 **Note:** All commands must end with `\r\n`, given by the `endcmd_s` variable in the header file. This
 communicates the Carriage Return (`<CR>`) and the new line character. 
+
+### Play/Pause
+
+`play_pause()`
+
+Sends the play/pause command to the RN-52 module.
+This should play or pause the current track on the connected device. 
+
+### Volume Up
+
+`vol_up()`
+
+Sends the volume up command to the RN-52 module.
+
+**Note:** This command does not seem to be compatible with iOS devices, but works as expected with
+Windows 10 computers. 
+
+### Volume Down 
+
+`vol_down()`
+
+Sends the volume down command to the RN-52 module. 
+
+**Note:** This command does not seem to be compatible with iOS devices, but works as expected with
+Windows 10 computers. 
+
+### Next Track
+
+`next()`
+
+Sends the next track command to the RN-52 module. 
+This will skip to the next track on the connected device. 
+
+### Last Track
+
+`last()`
+
+Sends the last track command to the RN-52 module.
+This will skip to the previous track on the connected device.
+
+### Set Name
+
+`set_name(char name)`
+
+Sets the name of the device to the desired char array. 
+This is useful to more easily identify the module when pairing and connecting to the device. 
+
+The default name is RN52-XXXX, where XXXX is the last four digits of the MAC address of the module. 
+
 
 # RN-52 Bluetooth Daughter Board
 
