@@ -4,7 +4,10 @@
 
 `code;
 `
-
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
 # RN-52 Bluetooth Daughter Board
 
 ## Module Description
