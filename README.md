@@ -100,8 +100,14 @@ This breakout board makes use of the "Command Mode" of the RN-52 module, allowin
     <td>SPK_L+, SPK_R+</td>
     <td>Left and Right positive speaker outputs</td>
   </tr>
-
+ 
 </table>
+
+## Breakout Board Layout
+
+<img src="https://i.imgur.com/85yoISD.png" width="800" title="RN-52 Breakout Board Layout">
+
+
 ![connector pinout](https://i.imgur.com/acJiQiz.png)
 
 
