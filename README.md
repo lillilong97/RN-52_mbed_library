@@ -1,11 +1,19 @@
 # RN-52 Bluetooth Module MBED Library
 
+## Class Definition
+
+'
+code;
+
+'
+# RN-52 Bluetooth Daughter Board
+
 ## Module Description
 The RN-52 Bluetooth Module ([data sheet](https://ww1.microchip.com/downloads/en/DeviceDoc/70005120A.pdf)) is an audio specific application Bluetooth trans-ceiver. The module uses the Bluetooth 3.0 protocol, but this does not pose compatibility issues as Bluetooth protocols are required to be backwards compatible. The module is optimized for audio transmission and outputs stereo audio, i.e. Left and Right channels. 
 
 ## Breakout Board Description
 
-## Schematic of the RN-52 Breakout Board
+### Schematic of the RN-52 Breakout Board
 
 <img src="https://i.imgur.com/FjV9205.png" width="800" title="RN-52 Breakout Board Schematic">
 
@@ -103,11 +111,11 @@ This breakout board makes use of the "Command Mode" of the RN-52 module, allowin
  
 </table>
 
-## Breakout Board Layout
+### Breakout Board Layout
 
 <img src="https://i.imgur.com/liXEvN5.png" width="800" title="RN-52 Breakout Board Layout">
 
-## Connector Pin Layout
+### Connector Pin Layout
 
 ![connector pinout](https://i.imgur.com/acJiQiz.png)
 
