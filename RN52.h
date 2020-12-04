@@ -1,5 +1,4 @@
 #include "mbed.h"
-
 //ascii commands
 char play_s[] = "AP\r\n";
 char vol_up_s[] = "AV+\r\n";
@@ -63,11 +62,20 @@ void RN52::send_buff (char *buff) {
     }
 }
 
+// PLAY FUNCTION
+// Sends "play" ascii command over serial
 void RN52::play() {
     rn52_serial.send_buff(play_s);
 }
 
+// PAUSE FUNCTION
+// Sends "pause" ascii command over serial
 void RN52::pause() {
     rn52_serial.send_buff(pause_s);
 }
 
+// VOLUME UP FUNCTION
+// Sends "vol_up" ascii command over serial
+void RN52::volume_up() {
+    rn52_serial.send_buff(vol_up_s);    
+}
