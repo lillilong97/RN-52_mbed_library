@@ -5,9 +5,8 @@ char vol_up_s[] = "AV+\r\n";
 char vol_dn_s[] = "AV-\r\n";
 char next_s[] = "AT+\r\n";
 char last_s[] = "AT-\r\n";
-char accept_call_s[] = "C\r\n";
-char reject_call_s[] = "E\r\n";
-
+char name_s[] = "SN,";
+char endcmd_s[] = "\r\n";
 
 class RN52 {
     public:
@@ -20,9 +19,7 @@ class RN52 {
         void vol_down();
         void next();
         void last();
-        void accept_call();
-        void reject_call();
-        void end_call();
+        void set_name(char name);
         RN52();
         RN52(PinName TX, PinName RX, PinName PWREN_pin);
     private:
@@ -78,4 +75,30 @@ void RN52::play_pause() {
 // Sends "vol_up" ascii command over serial
 void RN52::vol_up() {
     this->send_buff(vol_up_s);    
+}
+
+// VOLUME DOWN FUNCTION
+// Sends "vol_dn" ascii command over serial
+void RN52::vol_dn() {
+    this->send_buff(vol_dn_s);
+}
+
+// NEXT TRACK FUNCTION
+// Sends "next" ascii command over serial
+void RN52::next() {
+    this->send_buff(next_s);
+}
+
+// LAST TRACK FUNCTION
+// Sends "last" ascii command over serial
+void RN52::last() {
+    this->send_buff(last_s);
+}
+
+// SET NAME FUNCTION
+// sets the name of the bluetooth module that will show when pairing/connecting
+void RN52::setname(char name) {
+  this->send_buff(name_s);
+  this->send_buff(name);
+  this->send_buff(endcmd_s);
 }
