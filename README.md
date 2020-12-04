@@ -13,7 +13,7 @@ The RN-52 Bluetooth Module ([data sheet](https://ww1.microchip.com/downloads/en/
 Shown here is the EAGLE schematic of the RN-52 breakout board. 
 This breakout board makes use of the "Command Mode" of the RN-52 module, allowing it to be controlled over a UART connection by sending ASCII commands. 
 
-### Pins of Note
+### Pins Tied to GND 
 
 <table>
   <tr>
@@ -25,7 +25,36 @@ This breakout board makes use of the "Command Mode" of the RN-52 module, allowin
     <td>P2</td>
     <td>GPIO3</td>
     <td>Must be tied to GND through a 47k Resistor if not using USB interface
+  <tr>
+    <td>P11</td>
+    <td>GPIO9</td>
+    <td>Pull low to activate Command Mode</td>
   </tr>
+  <tr>
+    <td>P40,P41</td>
+    <td>SPK_L-,SPK_R-</td>
+    <td>Left and Right speaker reference lines tied to GND </td>
+  </tr>
+  <tr>
+    <td>P37,P38</td>
+    <td>MIC_L-,MIC_R-</td>
+    <td>Microphone negative output, tied to GND (mistakenly)</td>
+  </tr>
+  <tr>
+    <td>P32,P33</td>
+    <td>LED1,LED2</td>
+    <td>Indicator LEDS Blue and Red (respectively)</td>
+  </tr>
+
+  
+</table>
+
+### Pins Used by the Breakout Board
+<table>
+  <tr>
+    <th>Pin #</th>
+    <th>Pin Name</th>
+    <th>Description</th>
   <tr> 
     <td>P3</td>
     <td>GPIO2</td>
@@ -36,16 +65,11 @@ This breakout board makes use of the "Command Mode" of the RN-52 module, allowin
     <td>GPIO4</td>
     <td>Reset Pin (Active Low Input)</td>
   </tr>
-  <tr>
-    <td>P1</td>
-    <td>GPIO9</td>
-    <td>Pull low to activate Command Mode</td>
-  </tr>
-
   
+    
+
+
 </table>
-
-
 ![connector pinout](https://i.imgur.com/acJiQiz.png)
 
 
