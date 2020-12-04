@@ -1,13 +1,61 @@
 # RN-52 Bluetooth Module MBED Library
 
 ## Class Definition
-
-`code;
 `
-| Syntax | Description |
-| ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
+class RN52 {
+    public:
+        void init();
+        void setPWREN(int val);
+        void setSerial(PinName TX, PinName RX);
+        void send_buff(char* buff);
+        void play_pause();
+        void vol_up();
+        void vol_down();
+        void next();
+        void last();
+        void set_name(char name);
+        RN52();
+        RN52(PinName TX, PinName RX, PinName PWREN_pin);
+    private:
+        DigitalOut PWREN;
+        Serial rn52_serial;
+
+};
+
+`
+## Constructors
+
+### Default Constructor
+
+`RN52 bt;`
+
+By default, TX is set to p9, RX is set to p10, and PWREN is set to p11.
+When the RN52 class is invoked without input arguments, these are the pins that will be set. 
+
+### Constructor
+
+`RN52 bt(TX,RX,PWREN);`
+
+When the RN52 class is invoked with the above inputs (TX, RX, and PWREN being PinName variables),
+the given TX and RX pins are used for Serial communications and the given PWREN pin will be
+configured as the DigitalOut PWREN. 
+
+### Member Data
+
+`DigitalOut PWREN`
+
+_PWREN_ 
+
+PWREN is the Power Enable pin that must be held high to enable the RN52 module. If PWREN is not held
+high, the module will not power on, even if it is being supplied with VDD.
+
+`Serial rn52_serial`
+
+_rn52\_serial_
+
+rn52\_serial is a Serial object that controls the interface between the MBED and the RN-52 module.
+This is configured with the TX and RX pins given in the constructor. 
+The baud rate is set to 115200 baud, which is the given baud rate of the module in the data sheet. 
 # RN-52 Bluetooth Daughter Board
 
 ## Module Description
