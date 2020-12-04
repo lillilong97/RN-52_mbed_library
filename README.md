@@ -343,4 +343,26 @@ on top is pointing toward the center of the board.
 
 ## Hello World
 
+```
+#include "mbed.h"
+#include "RN52.h"
 
+RN52 bt;
+
+int main() {
+
+    bt.init();
+
+    while (1) {
+
+    }
+
+}
+```
+
+This "Hello World" program will power on the RN-52 and allow you to connect to it from your device.
+The while(1) loop is to prevent the MBED from doing weird things when the code is finished
+executing. 
+
+When you control the module from your device, the EVENT\_IND line will be pulled low every time it
+executes a command. It's useful to connect an LED to this line. 
