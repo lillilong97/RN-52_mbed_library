@@ -13,7 +13,7 @@ The RN-52 Bluetooth Module ([data sheet](https://ww1.microchip.com/downloads/en/
 Shown here is the EAGLE schematic of the RN-52 breakout board. 
 This breakout board makes use of the "Command Mode" of the RN-52 module, allowing it to be controlled over a UART connection by sending ASCII commands. 
 
-### Pins Tied to GND 
+### Pins Used but not Output 
 
 <table>
   <tr>
@@ -65,9 +65,41 @@ This breakout board makes use of the "Command Mode" of the RN-52 module, allowin
     <td>GPIO4</td>
     <td>Reset Pin (Active Low Input)</td>
   </tr>
-  
-    
-
+  <tr>
+    <td>P14</td>
+    <td>UART_RTS</td>
+    <td>UART Ready to Send control flow (Active Low)</td>
+  </tr>
+  <tr>
+    <td>P15</td>
+    <td>UART_CTS</td>
+    <td>UART Clear to Send control flow (Active Low)</td>
+  </tr>
+  <tr>
+    <td>P16</td>
+    <td>UART_TX</td>
+    <td>UART Transmit (MISO)</td>
+  </tr>
+  <tr>
+    <td>P17</td>
+    <td>UART_RX</td>
+    <td>UART Receive (MOSI)</td>
+  </tr>
+  <tr>
+    <td>P21</td>
+    <td>PWREN</td>
+    <td>Power Enable (Active High)</td>
+  </tr>
+  <tr>
+    <td>P22</td>
+    <td>VDD</td>
+    <td>3.3 V Power In</td>
+  </tr>
+  <tr>
+    <td>P42,P43</td>
+    <td>SPK_L+, SPK_R+</td>
+    <td>Left and Right positive speaker outputs</td>
+  </tr>
 
 </table>
 ![connector pinout](https://i.imgur.com/acJiQiz.png)
