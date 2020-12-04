@@ -25,10 +25,10 @@ class RN52 {
         void reject_call();
         void end_call();
         RN52();
-        RN52(int TX, int RX, int PWREN_pin);
+        RN52(PinName TX, PinName RX, PinName PWREN_pin);
     private:
-        DigitalOut PWREN(int PWREN_pin);
-        Serial rn52_serial(int TX, int RX);
+        DigitalOut PWREN(PinName PWREN_pin);
+        Serial rn52_serial(PinName TX, PinName RX);
 
 };
 
@@ -41,7 +41,7 @@ RN52::RN52() {
 }
 
 // CONSTRUCTOR
-RN52::RN52(int TX, int RX, int PWREN_pin) {
+RN52::RN52(PinName TX, PinName RX, PinName PWREN_pin) {
     Serial rn52_serial(TX,RX);
     DigitalOut PWREN(PWREN_pin);
 
