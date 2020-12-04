@@ -12,6 +12,7 @@ char reject_call_s[] = "E\r\n";
 
 class RN52 {
     public:
+        void init();
         void setPWREN(int pin); 
         void setSerial(int TX, int RX);
         void send_buff();
@@ -38,7 +39,6 @@ RN52::RN52() {
     //default PWREN is p11
     Serial rn52_serial(p9,p10);
     DigitalOut PWREN(p11);
-
 }
 
 // CONSTRUCTOR
@@ -48,14 +48,26 @@ RN52::RN52(int TX, int RX, int PWREN_pin) {
 
 }
 
-void RN52::send_buff (char *buff, Serial rn52) {
+// INITIALIZATION FUNCTION
+// Sets Power Enable to 1, Sets baud rate of serial object to 115200
+void RN52::init() {
+    PWREN = 1;
+    rn52_serial.baud(115200);
+}
+
+// SEND BUFFER FUNCTION
+// Sends char buffer over serial using the putc() function of the Serial object
+void RN52::send_buff (char *buff) {
     for(int i = 0; i < sizeof(buff); i++) {
             rn52_serial.putc(buff[i]); 
     }
 }
 
 void RN52::play() {
-    rn52_serial.send_buff(play)
+    rn52_serial.send_buff(play_s);
+}
 
+void RN52::pause() {
+    rn52_serial.send_buff(pause_s);
 }
 
