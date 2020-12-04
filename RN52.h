@@ -12,8 +12,8 @@ char reject_call_s[] = "E\r\n";
 class RN52 {
     public:
         void init();
-        void setPWREN(int pin); 
-        void setSerial(int TX, int RX);
+        void setPWREN(int val);
+        void setSerial(PinName TX, PinName RX);
         void send_buff();
         void play();
         void pause();
@@ -45,6 +45,12 @@ RN52::RN52(PinName TX, PinName RX, PinName PWREN_pin) {
     Serial rn52_serial(TX,RX);
     DigitalOut PWREN(PWREN_pin);
 
+}
+// SET PWREN VALUE
+// Sets value of PWREN
+// takes values of 0 [OFF] and 1 [ON]
+void RN52::setPWREN(int val) {
+    PWREN = val;
 }
 
 // INITIALIZATION FUNCTION
