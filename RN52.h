@@ -12,7 +12,6 @@ class RN52 {
     public:
         void init();
         void setPWREN(int val);
-        void setSerial(PinName TX, PinName RX);
         void send_buff(char* buff);
         void play_pause();
         void vol_up();
