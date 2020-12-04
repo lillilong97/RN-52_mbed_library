@@ -339,3 +339,8 @@ on top is pointing toward the center of the board.
 5. Audio quality is not ideal because this board does not supply a differential output. Both channels, Left and Right, are referenced to ground instead of their differential counterparts. This was done for layout simplicity, but will likely be changed in future revisions. 
 
 
+# Getting Started
+
+## Hello World
+
+
