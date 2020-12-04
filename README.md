@@ -5,7 +5,7 @@ The RN-52 Bluetooth Module ([data sheet](https://ww1.microchip.com/downloads/en/
 
 ## Breakout Board Description
 
-**Schematic of the RN-52 Breakout Board**
+## Schematic of the RN-52 Breakout Board
 
 <img src="https://i.imgur.com/FjV9205.png" width="800" title="RN-52 Breakout Board Schematic">
 
@@ -110,6 +110,12 @@ This breakout board makes use of the "Command Mode" of the RN-52 module, allowin
 ## Connector Pin Layout
 
 ![connector pinout](https://i.imgur.com/acJiQiz.png)
+
+The connectors populated on the board are Molex Microfit 3.0 connectors, but the pin pitch is
+compatible with standard header pins. 
+
+The tables below show the pinout of each connector. The connectors are oriented such that the notch
+on top is pointing toward the center of the board.
 
 ## Breakout Board Pinout
 
