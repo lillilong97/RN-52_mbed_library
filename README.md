@@ -1,7 +1,7 @@
 # RN-52 Bluetooth Module MBED Library
 
 ## Class Definition
-`
+```
 class RN52 {
     public:
         void init();
@@ -22,7 +22,7 @@ class RN52 {
 
 };
 
-`
+```
 ## Constructors
 
 ### Default Constructor
