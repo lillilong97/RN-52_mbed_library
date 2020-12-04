@@ -105,7 +105,7 @@ This breakout board makes use of the "Command Mode" of the RN-52 module, allowin
 
 ## Breakout Board Layout
 
-<img src="https://i.imgur.com/85yoISD.png" width="800" title="RN-52 Breakout Board Layout">
+<img src="https://i.imgur.com/iXEvN5.png" width="800" title="RN-52 Breakout Board Layout">
 
 
 ![connector pinout](https://i.imgur.com/acJiQiz.png)
