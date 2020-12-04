@@ -50,7 +50,7 @@ RN52::RN52(PinName TX, PinName RX, PinName PWREN_pin) {
 // INITIALIZATION FUNCTION
 // Sets Power Enable to 1, Sets baud rate of serial object to 115200
 void RN52::init() {
-    PWREN = 1;
+    PWREN.write(1);
     rn52_serial.baud(115200);
 }
 
