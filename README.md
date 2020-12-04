@@ -147,6 +147,43 @@ This breakout board makes use of the "Command Mode" of the RN-52 module, allowin
 
 </table>
 
+
+
+### Output (RIGHT SIDE)
+
+<table>
+  <tr>
+    <th>Pin #</th>
+    <th>Pin Name</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>EVENT_IND</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>UART_TX</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>SPK_L+</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>SPK_R+</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>UART_RTS</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>MIC</td>
+  </tr>
+
+</table>
+
+
 ## Known Issues
 1. Microphone output DOES NOT work. This is due to a misunderstanding of the microphone configuration based on unclear documentation.
 
