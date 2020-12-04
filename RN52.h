@@ -19,7 +19,7 @@ class RN52 {
         void vol_down();
         void next();
         void last();
-        void set_name(char name);
+        void set_name(char* name);
         RN52();
         RN52(PinName TX, PinName RX, PinName PWREN_pin);
     private:
@@ -97,7 +97,7 @@ void RN52::last() {
 
 // SET NAME FUNCTION
 // sets the name of the bluetooth module that will show when pairing/connecting
-void RN52::setname(char name) {
+void RN52::set_name(char name) {
   this->send_buff(name_s);
   this->send_buff(name);
   this->send_buff(endcmd_s);
