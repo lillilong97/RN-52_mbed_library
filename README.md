@@ -23,6 +23,7 @@ class RN52 {
 };
 
 ```
+
 ## Constructors
 
 ### Default Constructor
@@ -56,6 +57,33 @@ _rn52\_serial_
 rn52\_serial is a Serial object that controls the interface between the MBED and the RN-52 module.
 This is configured with the TX and RX pins given in the constructor. 
 The baud rate is set to 115200 baud, which is the given baud rate of the module in the data sheet. 
+
+## Member Functions
+
+### Initialize 
+
+`void init()`
+
+Initializes PWREN to 1 and sets the baud rate of the Serial object rn52\_serial. Should be invoked in
+the main loop before any other commands are used.
+
+### Set PWREN
+
+`setPWREN(int val)`
+
+Change value of PWREN. Useful if you need to put the module into hibernation without power cycling. 
+
+### Send Buffer
+
+`send_buff(char* buff)`
+
+Send a char[] buffer over UART to the RN-52. Useful to send commands that are not predefined
+functions. 
+More commands avaiable [here](https://ww1.microchip.com/downloads/en/DeviceDoc/50002154A.pdf). 
+
+**Note:** All commands must end with `\r\n`, given by the `endcmd_s` variable in the header file. This
+communicates the Carriage Return (`<CR>`) and the new line character. 
+
 # RN-52 Bluetooth Daughter Board
 
 ## Module Description
