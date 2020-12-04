@@ -79,7 +79,7 @@ void RN52::vol_up() {
 
 // VOLUME DOWN FUNCTION
 // Sends "vol_dn" ascii command over serial
-void RN52::vol_dn() {
+void RN52::vol_down() {
     this->send_buff(vol_dn_s);
 }
 
